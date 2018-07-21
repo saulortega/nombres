@@ -5,6 +5,16 @@ import (
 )
 
 func Corregir(n string) string {
+	var pdzs = []string{}
+
+	for _, nn := range strings.Split(n, " ") {
+		pdzs = append(pdzs, corregir(nn))
+	}
+
+	return strings.Join(pdzs, " ")
+}
+
+func corregir(n string) string {
 	n = strings.TrimSpace(n)
 	mi := strings.ToLower(n)
 	ma := strings.ToUpper(mi)
